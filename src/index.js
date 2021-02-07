@@ -4,6 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const getData = async () => {
+  try {
+    const responseData = await fetch("https://api.spacexdata.com/v3/missions");
+    if (responseData.ok){
+      const data = await responseData.json();
+    }
+  } catch(error) {
+    console.log(error)
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
